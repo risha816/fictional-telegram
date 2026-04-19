@@ -1,0 +1,11 @@
+{
+  "name": "Cine.Vault",
+  "description": "Premium Cinematic Telegram Mini App for content discovery and channel integration.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "telegram-mini-app"
+  ]
+}
