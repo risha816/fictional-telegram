@@ -37,7 +37,7 @@ const config = {
   exclusive: {
     channel:  'YOUR_EXCLUSIVE_CHANNEL',      // 🔧 তোমার Premium/Exclusive channel username
     title:    'প্রিমিয়াম জোন',               // 🔧 card এ যে নাম দেখাবে
-    subtitle: 'Top Rated · HD Quality',      // 🔧 নিচে ছোট text (চাইলে বদলাও)
+    subtitle: 'adult 18+ · HD Quality',      // 🔧 নিচে ছোট text (চাইলে বদলাও)
   },
 
 };
