@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=Rajdhani:wght@500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", sans-serif;
+  --font-tech: "Rajdhani", sans-serif;
+  --font-bengali: "Hind Siliguri", sans-serif;
+  
+  --color-base: #0E0E12;
+  --color-accent: #4FC3F7;
+}
+
+body {
+  @apply font-sans antialiased text-white select-none;
+  background-color: var(--color-base);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.syne {
+  font-family: var(--font-display);
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #1A1A20 25%, #25252D 50%, #1A1A20 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.diagonal-stripes {
+  background-image: linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.05) 75%, transparent 75%, transparent);
+  background-size: 10px 10px;
+}
+
+/* ── Loading Screen Animations ── */
+@keyframes filmroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.08); }
+}
+@keyframes scan-line {
+  0%   { top: 0%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+@keyframes letter-reveal {
+  0%   { opacity: 0; transform: translateY(20px) skewX(-5deg); filter: blur(8px); }
+  100% { opacity: 1; transform: translateY(0) skewX(0deg);    filter: blur(0); }
+}
+@keyframes bar-fill {
+  0%   { width: 0%; }
+  60%  { width: 85%; }
+  85%  { width: 92%; }
+  100% { width: 100%; }
+}
+@keyframes flicker {
+  0%,100% { opacity: 1; }
+  92%      { opacity: 1; }
+  93%      { opacity: 0.4; }
+  94%      { opacity: 1; }
+  96%      { opacity: 0.6; }
+  97%      { opacity: 1; }
+}
+@keyframes float-up {
+  0%   { transform: translateY(0px); opacity: 0.6; }
+  50%  { transform: translateY(-8px); opacity: 1; }
+  100% { transform: translateY(0px); opacity: 0.6; }
+}
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes counter-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+.film-roll-track {
+  animation: filmroll 6s linear infinite;
+}
+.pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.scan-line  { animation: scan-line 2.5s ease-in-out infinite; }
+.bar-fill   { animation: bar-fill 2.8s cubic-bezier(0.4,0,0.2,1) forwards; }
+.flicker    { animation: flicker 4s ease-in-out infinite; }
+.float-up   { animation: float-up 3s ease-in-out infinite; }
+.rotate-slow { animation: rotate-slow 8s linear infinite; }
+.counter-rotate { animation: counter-rotate 6s linear infinite; }
+
+.letter-1 { animation: letter-reveal 0.5s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
+.letter-2 { animation: letter-reveal 0.5s cubic-bezier(0.16,1,0.3,1) 0.42s both; }
+.letter-3 { animation: letter-reveal 0.5s cubic-bezier(0.16,1,0.3,1) 0.54s both; }
+.letter-4 { animation: letter-reveal 0.5s cubic-bezier(0.16,1,0.3,1) 0.66s both; }
+.letter-5 { animation: letter-reveal 0.5s cubic-bezier(0.16,1,0.3,1) 0.78s both; }
+.letter-6 { animation: letter-reveal 0.5s cubic-bezier(0.16,1,0.3,1) 0.9s both; }
+.letter-7 { animation: letter-reveal 0.5s cubic-bezier(0.16,1,0.3,1) 1.02s both; }
+.letter-8 { animation: letter-reveal 0.5s cubic-bezier(0.16,1,0.3,1) 1.14s both; }
+.letter-9 { animation: letter-reveal 0.5s cubic-bezier(0.16,1,0.3,1) 1.26s both; }
